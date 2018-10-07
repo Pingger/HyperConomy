@@ -17,6 +17,6 @@ node {
     }
     stage('Results') {
         junit allowEmptyResults: true, testResults: '**/target/surefire-reports/TEST-*.xml'
-        archive 'target/*.jar'
+        archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar', fingerprint: true
     }
 }
